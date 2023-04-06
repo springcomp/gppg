@@ -17,7 +17,7 @@ namespace QUT.GPGen
 
 		public CodeGenerator( Grammar grammar ) { this.grammar = grammar; }
 
-		internal void Generate(List<AutomatonState> states )
+		internal int Generate(List<AutomatonState> states )
 		{
 			StreamWriter tWrtr = null;
 			StreamWriter cstWrtr = null;
@@ -46,7 +46,7 @@ namespace QUT.GPGen
 					Console.Error.WriteLine("GPPG: Error. File redirect failed");
 					Console.Error.WriteLine(x.Message);
 					Console.Error.WriteLine("GPPG: Terminating ...");
-					Environment.Exit(1);
+					return 0;
 				}
 			}
 
@@ -114,6 +114,8 @@ namespace QUT.GPGen
 					Console.Error.WriteLine(x.Message);
 					cWrtr = null;
 				}
+
+				return 1;
 			}
 
 			GenerateCopyright();
@@ -178,6 +180,8 @@ namespace QUT.GPGen
 				Console.SetOut(save);
 				sWrtr.Dispose();
 			}
+
+			return 1;
 		}
 
 
@@ -188,7 +192,7 @@ namespace QUT.GPGen
 			Console.WriteLine();
 			if (Program.IncludeInfo) {
 				Console.WriteLine( "// GPPG version " + Program.versionInfo );
-				Console.WriteLine( "// Machine:  " + Environment.MachineName );
+				Console.WriteLine( "// Machine:  " + Shims.MachineName );
 				Console.WriteLine( "// DateTime: " + DateTime.Now.ToString() );
 				Console.WriteLine( "// Input file <{0}>", grammar.InputFileIdent );
 			}
