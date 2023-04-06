@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netstandard1.3</TargetFramework>
+    <TargetFrameworks>net4.5;netstandard1.3</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageLicenseFile>License.md</PackageLicenseFile>
     <PackageTags>GPPG;Parser;netcore</PackageTags>
@@ -10,7 +10,7 @@
     <Authors>Wayne Kelly;John Gough;Starodub Oleg</Authors>
     <Product />
     <Company>Queensland University of Technology (QUT)</Company>
-    <Version>1.2.0</Version>
+    <Version>1.2.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
