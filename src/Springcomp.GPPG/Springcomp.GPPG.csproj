@@ -2,7 +2,7 @@
 
 <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <TargetFrameworks>netcoreapp3.1;net6.0</TargetFrameworks>
+    <TargetFrameworks>net8.0</TargetFrameworks>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackAsTool>true</PackAsTool>
     <ToolCommandName>dotnet-gppg</ToolCommandName>
@@ -15,11 +15,11 @@
     <Product />
     <Authors>Wayne Kelly;John Gough;Starodub Oleg</Authors>
     <PackageId>Springcomp.GPPG</PackageId>
-    <Version>1.2.1</Version>
+    <Version>1.2.5</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     <PackageReference Include="System.Reflection.TypeExtensions" Version="4.7.0" />
   </ItemGroup>
 
